@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import user from "../Images/Icons/FooterIcons/user.svg";
 import group from "../Images/Icons/FooterIcons/group.svg";
 import lines from "../Images/Icons/FooterIcons/lines.svg";
 import chat from "../Images/Icons/FooterIcons/chat.svg";
 export default function UserFooter() {
-  const images = [user, group, lines, chat];
+  const icons = [{ img: group }, { img: lines }, { img: chat }, { img: user }];
+  const [currentIcon, setCurentIcon] = useState(1);
   return (
     <div id="user-footer">
-      {images.map((img, index) => {
+      {icons.map((icon, index) => {
+        let iconClass = "img-fluid footer-logo ";
+        if (currentIcon === index) iconClass += "footer-logo--clicked";
         return (
-          <span key={index}>
-            <img className="img-fluid footer-logo" src={img} />
+          <span onClick={() => setCurentIcon(index)} key={index}>
+            <img className={iconClass} src={icon.img} />
           </span>
         );
       })}

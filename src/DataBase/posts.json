@@ -1,0 +1,5 @@
+[
+    { "avatar": "/UserAvatars/person1.jpg","img":"/PostImages/forest.jpg", "sender": "julia", "caption": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim quam sit nemo est corrupti voluptatum necessitatibus officia. Incidunt, optio minus." },
+    { "avatar": "/UserAvatars/person1.jpg","img":"/PostImages/forest.jpg", "sender": "julia", "caption": "hello this is my caption" },
+    { "avatar": "/UserAvatars/person1.jpg","img":"/PostImages/forest.jpg", "sender": "julia", "caption": "hello this is my caption" }
+  ]

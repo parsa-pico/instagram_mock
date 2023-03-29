@@ -20,6 +20,27 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* scroll bar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -28,6 +49,7 @@ code {
 #app {
   width: 100%;
 }
+/* user */
 #user {
   display: flex;
   flex-direction: column;
@@ -36,6 +58,7 @@ code {
   height: 100%;
   width: 100%;
 }
+/* user header */
 #user-header {
   display: flex;
   align-items: center;
@@ -48,6 +71,7 @@ code {
 .telegram-logo {
   width: 30px;
 }
+/* user footer */
 #user-footer {
   width: 100%;
   display: grid;
@@ -57,4 +81,48 @@ code {
 }
 .footer-logo {
   max-width: 50px;
+}
+.footer-logo:hover {
+  cursor: pointer;
+  filter: invert(47%) sepia(92%) saturate(2702%) hue-rotate(163deg)
+    brightness(97%) contrast(101%);
+}
+.footer-logo--clicked {
+  filter: invert(47%) sepia(92%) saturate(2702%) hue-rotate(345deg)
+    brightness(97%) contrast(101%);
+}
+/* feed */
+
+#feed {
+  /* display: flex; */
+  overflow: scroll;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.post__avatar {
+  border-radius: 50%;
+  width: 50px;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+.post {
+  width: 100%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px rgba(126, 126, 126, 0.277) solid;
+  padding-bottom: 2rem;
+}
+.post__header {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  width: 100%;
+  padding: 0 1rem;
+}
+.post__caption-wrapper {
+  padding-left: 0.5rem;
+  font-family: "Alkatra", cursive;
 }
