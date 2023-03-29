@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Image } from "react-bootstrap";
 import postsDB from "../DataBase/posts.json";
-import pic from "../Images/UserAvatars/person1.jpg";
+
 export default function Feed() {
   const [posts, setPosts] = useState(postsDB);
   return (
     <div id="feed">
-      {posts.map((post) => {
+      {posts.map((post, index) => {
         return (
-          <div className="post">
+          <div key={index} className="post">
             <div className="post__header">
               <Image className="post__avatar" fluid src={post.avatar} alt="" />
               <h5>{post.sender}</h5>

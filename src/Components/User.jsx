@@ -4,6 +4,7 @@ import Feed from "./Feed";
 import Setting from "./Setting";
 import UserFooter from "./UserFooter";
 import UserHeader from "./UserHeader";
+import Profile from "./Profile";
 export default function User() {
   return (
     <div id="user">
@@ -11,6 +12,7 @@ export default function User() {
       <Routes>
         <Route path="feed" element={<Feed />} />
         <Route path="setting" element={<Setting />} />
+        <Route path="profile" element={<Profile />} />
       </Routes>
       <UserFooter />
     </div>
