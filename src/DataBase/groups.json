@@ -1,0 +1,12 @@
+[
+    {"name":"friends","avatar":"/GroupAvatars/ball.jpg",
+    "members":[0,1,3],"chats":[
+        {
+            "senderId":3,"messeage":"hello"          
+         }  ,{
+            "senderId":0,"messeage":"hi"          
+         },{
+            "senderId":1,"messeage":"hey there"          
+         }                    ]   
+    }
+]

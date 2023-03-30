@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import user from "../Images/Icons/FooterIcons/user.svg";
 import group from "../Images/Icons/FooterIcons/group.svg";
 import lines from "../Images/Icons/FooterIcons/lines.svg";
-import chat from "../Images/Icons/FooterIcons/chat.svg";
+import contact from "../Images/Icons/FooterIcons/chat.svg";
 import { useNavigate } from "react-router-dom";
 export default function UserFooter() {
   const icons = [
-    { img: group, link: "" },
+    { img: group, link: "/user/groups" },
     { img: lines, link: "/user/feed" },
-    { img: chat, link: "" },
+    { img: contact, link: "/user/contact" },
     { img: user, link: "/user/setting" },
   ];
 

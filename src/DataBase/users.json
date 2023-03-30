@@ -1,6 +1,6 @@
 [
-    {"username":"Julia","avatar":"/UserAvatars/person1.jpg"},
-    {"username":"Emma","avatar":"/UserAvatars/person2.jpg", "interests": [
+    {"id":0,"username":"Julia","avatar":"/UserAvatars/person1.jpg"},
+    {"id":1,"username":"Emma","avatar":"/UserAvatars/person2.jpg", "interests": [
         {
           "category": "cooking",
           "speciality": "sushi making",
@@ -42,8 +42,11 @@
           "speciality": "city breaks",
           "frequency": "Occasionally",
           "level": "Beginner"
-        }],"friends":[{"userId":2}]
+        }],"friends":[{"userId":2,"situation":"pending"},
+                     {"userId":3,"situation":"accepted"}
+                
+                    ]
     },
-    {"username":"Eva","avatar":"/UserAvatars/person4.jpg"},
-    {"username":"Bob","avatar":"/UserAvatars/person3.jpg"}
+    {"id":2,"username":"Bob","avatar":"/UserAvatars/person3.avif"},
+    {"id":3,"username":"Eva","avatar":"/UserAvatars/person4.jfif"}
 ]
