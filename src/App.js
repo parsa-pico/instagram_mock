@@ -13,7 +13,7 @@ function App() {
     <div id="app">
       <useresContext.Provider value={[users, setUseres]}>
         <Routes>
-          <Route path="/" element={<Navigate to={"user"} />} />
+          <Route path="/" element={<Navigate to={"user/feed"} />} />
           <Route path="login" />
 
           <Route path="user/*" element={<User />} />
