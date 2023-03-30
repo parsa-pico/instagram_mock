@@ -51,7 +51,7 @@ export const yogaIcon = require("../Images/Icons/interest_icon/yoga.png");
 
 export const defaultIcon = require("../Images/Icons/interest_icon/interrogation-mark.png");
 
-export function getInterestImgSource(speciality) {
+export default function getInterestIcon(speciality) {
   switch (speciality) {
     case "hiking":
       return hikingIcon;
