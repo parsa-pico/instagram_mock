@@ -1,4 +1,47 @@
 [
     {"username":"Julia","avatar":"/UserAvatars/person1.jpg"},
-    {"username":"Emma","avatar":"/UserAvatars/person2.jpg"}
+    {"username":"Emma","avatar":"/UserAvatars/person2.jpg", "interests": [
+        {
+          "category": "cooking",
+          "speciality": "sushi making",
+          "frequency": "Occasionally",
+          "level": "Beginner"
+        },
+        {
+          "category": "entertainment",
+          "speciality": "movies",
+          "frequency": "Everyday",
+          "level": "Pro"
+        },
+        {
+          "category": "travel",
+          "speciality": "nature retreats",
+          "frequency": "Occasionally",
+          "level": "Pro"
+        },
+        {
+          "category": "creative",
+          "speciality": "painting",
+          "frequency": "Frequently",
+          "level": "God"
+        },
+        {
+          "category": "learning",
+          "speciality": "reading",
+          "frequency": "Everyday",
+          "level": "Intermidate"
+        },
+        {
+          "category": "entertainment",
+          "speciality": "music",
+          "frequency": "Everyday",
+          "level": "God"
+        },
+        {
+          "category": "travel",
+          "speciality": "city breaks",
+          "frequency": "Occasionally",
+          "level": "Beginner"
+        }]
+    }
 ]

@@ -23,9 +23,9 @@ body {
 /* scroll bar */
 
 /* width */
-/* ::-webkit-scrollbar {
-  width: 5px;
-} */
+::-webkit-scrollbar {
+  width: 0px;
+}
 
 /* Track */
 /* ::-webkit-scrollbar-track {
