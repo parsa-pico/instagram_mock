@@ -1,4 +1,8 @@
 #root {
+  width: 100vw;
+  height: 100vh;
+}
+#app {
   display: flex;
   position: absolute;
   top: 50%;
@@ -34,7 +38,7 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 0px;
+  width: 2px;
 }
 
 /* Track */
@@ -43,9 +47,9 @@ body {
 } */
 
 /* Handle */
-/* ::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background: #888;
-} */
+}
 
 /* Handle on hover */
 /* ::-webkit-scrollbar-thumb:hover {
@@ -56,9 +60,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-#app {
-  width: 100%;
-}
+
 /* user */
 #user {
   display: flex;
@@ -215,10 +217,11 @@ code {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  transition: all 0.2s;
 }
 .interest__trash:hover {
   opacity: 1;
-  transition: all 0.2s;
+
   cursor: pointer;
 }
 .interest__plus {
@@ -249,4 +252,23 @@ code {
   transform: rotateZ(45deg);
   filter: invert(28%) sepia(59%) saturate(7489%) hue-rotate(343deg)
     brightness(81%) contrast(113%);
+}
+
+/* interest form */
+#interest-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.interest-form__heading {
+  font-family: Anton;
+  align-self: center;
+  margin-bottom: 2rem;
+}
+.interest-from__option {
+}
+.interest-form__btn {
+  margin-top: 1rem;
+  width: 100%;
 }

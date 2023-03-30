@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import user from "../Images/Icons/FooterIcons/user.svg";
 import group from "../Images/Icons/FooterIcons/group.svg";
 import lines from "../Images/Icons/FooterIcons/lines.svg";
@@ -11,10 +11,11 @@ export default function UserFooter() {
     { img: chat, link: "" },
     { img: user, link: "/user/setting" },
   ];
-  const [currentIcon, setCurentIcon] = useState(1);
+
+  const [currentIcon, setCurrentIcon] = useState(1);
   const navigate = useNavigate();
   function handleClick(index) {
-    setCurentIcon(index);
+    setCurrentIcon(index);
     navigate(icons[index].link);
   }
   return (
