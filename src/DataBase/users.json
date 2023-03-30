@@ -42,6 +42,8 @@
           "speciality": "city breaks",
           "frequency": "Occasionally",
           "level": "Beginner"
-        }]
-    }
+        }],"friends":[{"userId":2}]
+    },
+    {"username":"Eva","avatar":"/UserAvatars/person4.jpg"},
+    {"username":"Bob","avatar":"/UserAvatars/person3.jpg"}
 ]
