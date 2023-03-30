@@ -405,3 +405,36 @@ code {
 .send-req-btn {
   width: 120px;
 }
+/* groups  */
+#groups {
+  width: 100%;
+  height: 100%;
+}
+.groups__row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: start;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+.groups__row:hover {
+  background-color: #eaeaea;
+}
+.groups__img {
+  width: 70px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.groups__header {
+  margin-left: 1rem;
+  font-family: Roboto;
+}
+.groups__heading {
+  /* font-family: "Anton"; */
+  font-weight: 700;
+}
+.groups__sender {
+  color: rgb(13, 110, 253);
+  display: inline-block;
+}
