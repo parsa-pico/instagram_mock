@@ -1,6 +1,9 @@
 [
     {"id":0,"username":"Julia","avatar":"/UserAvatars/person1.jpg"},
-    {"id":1,"username":"Emma","avatar":"/UserAvatars/person2.jpg", "interests": [
+    {"id":1,"username":"Emma","avatar":"/UserAvatars/person2.jpg",
+    "country":"Spain",
+    "birthDate":"2001-01-01",
+     "interests": [
         {
           "category": "cooking",
           "speciality": "sushi making",

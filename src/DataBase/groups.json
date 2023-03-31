@@ -1,5 +1,5 @@
 [
-    {"name":"footbal friends","avatar":"/GroupAvatars/ball.jpg",
+    {"name":"footbal friends","avatar":"/GroupAvatars/ball.jpg","id":0,
     "members":[0,1,3],"chats":[
         {
             "senderId":3,"messeage":"hello"          
@@ -9,7 +9,8 @@
             "senderId":1,"messeage":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium repellendus similique voluptatibus commodi. Accusamus iste sint adipisci. Ad quia alias soluta nostrum ipsam amet, ut ducimus dolorem quas inventore id?"          
          }                    ]   
     },
-    {"name":"fellas","avatar":"/GroupAvatars/fellas.jfif",
+    
+    {"name":"fellas","avatar":"/GroupAvatars/fellas.jfif","id":1,
     "members":[0,1,3],"chats":[
         {
             "senderId":3,"messeage":"hello"          

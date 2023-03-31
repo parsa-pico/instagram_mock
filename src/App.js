@@ -2,23 +2,28 @@ import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import User from "./Components/User";
 import useresData from "./DataBase/users.json";
+import groupsData from "./DataBase/groups.json";
 import useresContext from "./Context/useresContext.js";
+import groupsContext from "./Context/groupsContext";
 
 function App() {
   useEffect(() => {
     localStorage.setItem("currentUserIndex", 1);
   });
   const [users, setUseres] = useState(useresData);
+  const [groups, setGroups] = useState(groupsData);
   return (
     <div id="app">
-      <useresContext.Provider value={[users, setUseres]}>
-        <Routes>
-          <Route path="/" element={<Navigate to={"user/feed"} />} />
-          <Route path="login" />
+      <groupsContext.Provider value={[groups, setGroups]}>
+        <useresContext.Provider value={[users, setUseres]}>
+          <Routes>
+            <Route path="/" element={<Navigate to={"user/feed"} />} />
+            <Route path="login" />
 
-          <Route path="user/*" element={<User />} />
-        </Routes>
-      </useresContext.Provider>
+            <Route path="user/*" element={<User />} />
+          </Routes>
+        </useresContext.Provider>
+      </groupsContext.Provider>
     </div>
   );
 }

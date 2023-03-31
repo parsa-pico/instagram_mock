@@ -9,6 +9,7 @@ import InteresetForm from "./InteresetForm";
 import Contact from "./Contact";
 import AddFriend from "./AddFriend";
 import Groups from "./Groups";
+import Group from "./Group";
 export default function User() {
   return (
     <div id="user">
@@ -21,6 +22,7 @@ export default function User() {
         <Route path="contact" element={<Contact />} />
         <Route path="add-friend" element={<AddFriend />} />
         <Route path="groups" element={<Groups />} />
+        <Route path="groups/:id" element={<Group />} />
       </Routes>
       <UserFooter />
     </div>

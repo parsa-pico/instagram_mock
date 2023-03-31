@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Button, Image } from "react-bootstrap";
 import useUser from "../hooks/useUser";
 import { currentUserId } from "../utils/commonFunctions";
-
+import { ToastContainer, toast, Zoom } from "react-toastify";
 export default function FriendReq() {
   const [users, setUsers, currentUser, setCurrentUser] = useUser();
 
@@ -12,9 +12,11 @@ export default function FriendReq() {
     let currentUserCopy = { ...currentUser };
     currentUserCopy.friends = [...currentUserCopy.friends];
     currentUserCopy.friends[reqIndex].situation = "accpeted";
+
     usersCopy[index] = currentUserCopy;
     setUsers(usersCopy);
     setCurrentUser(currentUserCopy);
+    toast.success("request accepted");
   }
 
   function rejecetFriend(reqIndex) {
@@ -31,6 +33,7 @@ export default function FriendReq() {
 
   return (
     <div id="friend-req">
+      <ToastContainer autoClose={1000} transition={Zoom} />
       <h3 className="friend-req__heading">Friend requests</h3>
       {currentUser &&
         currentUser.friends &&

@@ -73,6 +73,21 @@ code {
     monospace;
 }
 
+/* off canvas , modal , role dialog */
+div[role="dialog"],
+.my-backdrop {
+  width: 360px;
+  height: 800px;
+  position: absolute;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  border-radius: 25px;
+}
+div[role="dialog"] {
+  width: 320px;
+}
+
 /* user */
 #user {
   display: flex;
@@ -437,4 +452,50 @@ code {
 .groups__sender {
   color: rgb(13, 110, 253);
   display: inline-block;
+}
+
+/* individual group */
+#group {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* group bar */
+#group-bar {
+  width: 100%;
+  justify-content: flex-start;
+  padding: 0.2rem 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.077);
+}
+.group-bar__arrow {
+  width: 50px;
+  aspect-ratio: 1/1;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.group-bar__arrow:hover {
+  transform: scale(1.1);
+}
+.group-bar__img {
+  width: 45px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.group-bar__header {
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+}
+.group-bar__heading {
+  font-weight: 600;
+}
+.group-bar__caption {
+  color: #888;
 }
