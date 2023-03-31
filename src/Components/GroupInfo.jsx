@@ -1,91 +1,101 @@
 import React, { useEffect, useState } from "react";
-import { Image } from "react-bootstrap";
+import { Button, Image, Modal } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
 import useGroups from "../hooks/useGroups";
 import backArrow from "../Images/Icons/back-arrow.svg";
 import useUser from "./../hooks/useUser";
+import UserInfoBar from "./UserInfoBar";
+import UserInfoMembers from "./UserInfoMembers";
 
 export default function GroupInfo() {
   const [groups, setGroups, currentGroup, setCurrentGroup] = useGroups();
   const [users, setUsers, currentUser] = useUser();
   const [barHeight, setBarHeight] = useState();
   const navigate = useNavigate();
+  const [selectedMember, setSelectedMember] = useState(null);
 
-  function countMembers() {
-    return currentGroup.members.length;
-  }
+  const [showModal, setShowModal] = useState(false);
+  const handleCloseModal = () => setShowModal(false);
+  const handleShowModal = () => setShowModal(true);
+  const [selectedMemberName, setSelectedMemberName] = useState("");
 
   useEffect(() => {
     setTimeout(() => {
       const element = document.getElementsByClassName(
         "group-info-bar-wrapper"
       )[0];
-      element.classList.add("animation-none");
-      console.log(element.height);
       setBarHeight(element.clientHeight + 20);
     }, 1);
   }, []);
+
+  function getMemberName() {
+    const user = users.find((user) => user.id === selectedMember);
+
+    return user.username;
+  }
+
+  useEffect(() => {
+    if (selectedMember !== null) setSelectedMemberName(getMemberName());
+  }, [selectedMember]);
+
+  function removeMember() {
+    const groupsCopy = [...groups];
+    const currentGroupCopy = { ...currentGroup };
+
+    currentGroupCopy.members = [...currentGroup.members];
+    const index = currentGroupCopy.members.findIndex(
+      (memberId) => memberId === selectedMember
+    );
+    currentGroupCopy.members.splice(index, 1);
+    groupsCopy[currentGroup.id] = currentGroupCopy;
+    setCurrentGroup(currentGroupCopy);
+    setGroups(groupsCopy);
+  }
+
   return (
-    <div className="group " id="group-info">
-      <Bar />
+    <div
+      onClick={(e) => {
+        if (e.target.className === "group-members") setSelectedMember(null);
+      }}
+      className="group "
+      id="group-info"
+    >
+      <UserInfoBar currentGroup={currentGroup} />
+
       <div style={{ height: barHeight, flexShrink: 0 }}>.</div>
-      <Members />
+
+      <UserInfoMembers
+        selectedMember={selectedMember}
+        setSelectedMember={setSelectedMember}
+        closeModal={handleCloseModal}
+        showModal={handleShowModal}
+        currentGroup={currentGroup}
+      />
+      <Modal
+        backdropClassName="my-backdrop"
+        show={showModal}
+        onHide={handleCloseModal}
+      >
+        <Modal.Header closeButton></Modal.Header>
+        <Modal.Body>
+          aure you sure you want to remove &nbsp;
+          <b>{selectedMemberName}</b> ?
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Cancel
+          </Button>
+          <Button
+            variant="primary"
+            onClick={() => {
+              removeMember();
+              handleCloseModal();
+            }}
+          >
+            Yes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </div>
   );
-
-  function Members() {
-    return (
-      <div className="group-members">
-        {currentGroup &&
-          currentGroup.members.map((memberId, idx) => {
-            const member = users.find((user) => user.id === memberId);
-            return (
-              <div key={idx} className="post__header">
-                <Image
-                  className="post__avatar"
-                  fluid
-                  src={member.avatar}
-                  alt=""
-                />
-                <h5>{member.username}</h5>
-              </div>
-            );
-          })}
-      </div>
-    );
-  }
-
-  function Bar() {
-    return (
-      <>
-        <div className="flex-row group-bar group-info-bar-wrapper">
-          <img
-            onClick={() => navigate(`/user/groups/${currentGroup.id}`)}
-            className="img-fluid group-bar__arrow group-info__arrow "
-            src={backArrow}
-            alt=""
-          />
-
-          <div>
-            <div style={{ height: "50px" }}></div>
-            <div className="group-info-bar">
-              <img
-                className="img-fluid group-bar__img group-info__img"
-                src={currentGroup && currentGroup.avatar}
-              />
-
-              <div className="group-bar__header group-info-header">
-                <h5 className="group-bar__heading group-info-heading">
-                  {currentGroup && currentGroup.name}
-                </h5>
-                <small className="group-bar__caption group-info-caption">
-                  {currentGroup && countMembers()} members
-                </small>
-              </div>
-            </div>
-          </div>
-        </div>
-      </>
-    );
-  }
 }

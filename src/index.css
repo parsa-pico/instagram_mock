@@ -89,6 +89,10 @@ div[role="dialog"] {
   width: 320px;
 }
 
+.you {
+  color: #888;
+  font-size: 0.7rem;
+}
 /* user */
 #user {
   display: flex;
@@ -651,4 +655,26 @@ div[role="dialog"] {
 }
 .animation-none {
   animation: none;
+}
+.group-info__member {
+  cursor: pointer;
+  position: relative;
+}
+.group-member-options {
+  z-index: 10;
+  width: 30%;
+  right: 10%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+.group-member-remove {
+  color: white;
+  padding: 0.2rem;
+}
+.user-member-trash {
+  width: 25px !important;
+  filter: invert(98%) sepia(2%) saturate(2310%) hue-rotate(147deg)
+    brightness(129%) contrast(100%);
 }
