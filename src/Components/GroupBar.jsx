@@ -1,21 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import backArrow from "../Images/Icons/back-arrow.svg";
-import useGroups from "../hooks/useGroups";
-export default function GroupBar() {
-  const [groups, setGroups] = useGroups();
-  const [currentGroup, setCurrentGroup] = useState();
-  console.log("hi");
-  const params = useParams();
-  useEffect(() => {
-    const id = parseInt(params.id);
-    const group = groups.find((group) => {
-      return group.id === id;
-    });
-    console.log("group", group);
-    setCurrentGroup(group);
-  }, []);
 
+export default function GroupBar({ currentGroup }) {
   const navigate = useNavigate();
 
   function countMembers() {

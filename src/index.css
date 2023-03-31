@@ -50,7 +50,7 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 2px;
+  width: 0px;
 }
 
 /* Track */
@@ -456,16 +456,20 @@ div[role="dialog"] {
 
 /* individual group */
 #group {
+  background-color: #bcf6e266;
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
   justify-content: flex-start;
   align-items: center;
+  overflow: scroll;
 }
 
 /* group bar */
 #group-bar {
+  background-color: white;
+  position: fixed;
   width: 100%;
   justify-content: flex-start;
   padding: 0.2rem 0.5rem;
@@ -498,4 +502,57 @@ div[role="dialog"] {
 }
 .group-bar__caption {
   color: #888;
+}
+
+/* group chat */
+#group-chat {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 0.8rem 1rem;
+  margin-top: 6vh;
+}
+.person-chat-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  margin: 2rem 0;
+  margin-right: 2rem;
+}
+.person-chat-img {
+  object-fit: cover;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+
+.person-chat-wrapper--current-user {
+  align-self: flex-end;
+  margin-left: 2rem;
+  margin-right: 0;
+}
+.person-chat-wrapper--current-user .person-chat-caption {
+  padding: 0.5rem 1rem;
+  margin-bottom: 0;
+  background-color: rgb(97 212 130);
+  border-radius: 10px;
+}
+.person-chat-wrapper--current-user .person-chat-header {
+  padding: 0;
+}
+
+.person-chat-header {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding-top: 0.2rem;
+  padding-bottom: 0;
+  padding-left: 0.6rem;
+  padding-right: 0.1rem;
+  border-radius: 10px;
+  min-width: 30%;
+}
+
+.person-chat-heading {
+  margin-bottom: 0;
 }

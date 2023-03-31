@@ -1,16 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import GroupBar from "./GroupBar";
-
+import GroupChat from "./GroupChat";
+import useGroups from "../hooks/useGroups";
+import GroupInput from "./GroupInput";
 export default function Group() {
+  const [groups, setGroups] = useGroups();
   const params = useParams();
-  const [groupId, setGroupId] = useState();
+  const [currentGroup, setCurrentGroup] = useState();
+
   useEffect(() => {
-    setGroupId(params.id);
+    const id = parseInt(params.id);
+    const group = groups.find((group) => {
+      return group.id === id;
+    });
+    setCurrentGroup(group);
   }, []);
+
   return (
     <div id="group">
-      <GroupBar groupId={groupId} />
+      <GroupBar currentGroup={currentGroup} />
+      <GroupChat currentGroup={currentGroup} />
+      <GroupInput />
     </div>
   );
 }
