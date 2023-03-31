@@ -72,7 +72,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+.display-none {
+  display: none !important;
+}
 /* off canvas , modal , role dialog */
 div[role="dialog"],
 .my-backdrop {
@@ -456,7 +458,7 @@ div[role="dialog"] {
 
 /* individual group */
 #group {
-  background-color: #bcf6e266;
+  background-color: #bff1ff;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -464,10 +466,12 @@ div[role="dialog"] {
   justify-content: flex-start;
   align-items: center;
   overflow: scroll;
+  border-radius: 20px;
 }
 
 /* group bar */
 #group-bar {
+  z-index: 2;
   background-color: white;
   position: fixed;
   width: 100%;
@@ -517,28 +521,37 @@ div[role="dialog"] {
   display: flex;
   justify-content: flex-start;
   margin: 2rem 0;
-  margin-right: 2rem;
+  margin-right: 1rem;
 }
 .person-chat-img {
   object-fit: cover;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  align-self: flex-end;
+  margin-right: 0.4rem;
 }
-
+.person-chat-caption {
+  white-space: pre-line;
+  margin-bottom: 0.5rem;
+}
 .person-chat-wrapper--current-user {
   align-self: flex-end;
-  margin-left: 2rem;
+  margin-left: 3rem;
   margin-right: 0;
 }
+
 .person-chat-wrapper--current-user .person-chat-caption {
   padding: 0.5rem 1rem;
   margin-bottom: 0;
   background-color: rgb(97 212 130);
-  border-radius: 10px;
+  border-radius: 10px 10px 0px 10px;
 }
 .person-chat-wrapper--current-user .person-chat-header {
   padding: 0;
+  clip-path: none;
+  border-radius: 10px;
 }
 
 .person-chat-header {
@@ -547,12 +560,45 @@ div[role="dialog"] {
   background-color: white;
   padding-top: 0.2rem;
   padding-bottom: 0;
-  padding-left: 0.6rem;
+  padding-left: 1.5rem;
   padding-right: 0.1rem;
   border-radius: 10px;
   min-width: 30%;
+  border-radius: 10px 10px 10px 0px;
+  clip-path: polygon(4% 0, 100% 0, 100% 100%, 0 100%, 3% 93%);
 }
 
 .person-chat-heading {
   margin-bottom: 0;
+  color: red;
+}
+/* group chat input */
+#group-input-wrapper {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: 45px;
+}
+.group-input {
+  position: relative;
+  border-radius: 0px 0px 20px 20px;
+  height: 100%;
+  resize: none;
+  border-bottom: none;
+}
+.group-input:hover,
+.group-input:active,
+.group-input:focus {
+  outline: 0;
+  box-shadow: none;
+  border: 1px solid rgba(166, 166, 166, 0.862);
+  border-bottom: none;
+}
+.group-input-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  border-radius: 0 0 15px 0;
+  height: 102%;
 }

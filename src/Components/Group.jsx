@@ -15,13 +15,20 @@ export default function Group() {
       return group.id === id;
     });
     setCurrentGroup(group);
+    document.getElementById("user-footer").className = "hidden display-none";
+    return () => {
+      document.getElementById("user-footer").className = "";
+    };
   }, []);
 
   return (
     <div id="group">
       <GroupBar currentGroup={currentGroup} />
       <GroupChat currentGroup={currentGroup} />
-      <GroupInput />
+      <GroupInput
+        setCurrentGroup={setCurrentGroup}
+        currentGroup={currentGroup}
+      />
     </div>
   );
 }

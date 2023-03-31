@@ -40,7 +40,7 @@ export default function GroupChat({ currentGroup }) {
 function DummyLastElement() {
   return (
     <>
-      <div style={{ height: "1px" }}></div>
+      <div style={{ height: "50px", opacity: 0 }}>.</div>
       <div id="group-chat-last"></div>
     </>
   );
