@@ -5,24 +5,16 @@ import GroupChat from "./GroupChat";
 import useGroups from "../hooks/useGroups";
 import GroupInput from "./GroupInput";
 export default function Group() {
-  const [groups, setGroups] = useGroups();
-  const params = useParams();
-  const [currentGroup, setCurrentGroup] = useState();
+  const [groups, setGroups, currentGroup, setCurrentGroup] = useGroups();
 
   useEffect(() => {
-    const id = parseInt(params.id);
-    const group = groups.find((group) => {
-      return group.id === id;
-    });
-    setCurrentGroup(group);
     document.getElementById("user-footer").className = "hidden display-none";
     return () => {
       document.getElementById("user-footer").className = "";
     };
   }, []);
-
   return (
-    <div id="group">
+    <div className="group">
       <GroupBar currentGroup={currentGroup} />
       <GroupChat currentGroup={currentGroup} />
       <GroupInput

@@ -8,18 +8,21 @@ export default function GroupBar({ currentGroup }) {
   function countMembers() {
     return currentGroup.members.length;
   }
+  function showGroupInfo() {
+    navigate(`/user/groups/${currentGroup.id}/info`);
+  }
   return (
-    <div className="flex-row" id="group-bar">
+    <div className="flex-row group-bar">
       <div onClick={() => navigate("/user/groups")}>
         <img className="img-fluid group-bar__arrow" src={backArrow} alt="" />
       </div>
-      <div>
+      <div onClick={showGroupInfo}>
         <img
           className="img-fluid group-bar__img"
           src={currentGroup && currentGroup.avatar}
         />
       </div>
-      <div className="group-bar__header">
+      <div onClick={showGroupInfo} className="group-bar__header">
         <h5 className="group-bar__heading">
           {currentGroup && currentGroup.name}
         </h5>
