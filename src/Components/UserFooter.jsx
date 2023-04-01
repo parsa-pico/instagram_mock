@@ -20,17 +20,30 @@ export default function UserFooter() {
     },
   ];
 
-  const [currentIcon, setCurrentIcon] = useState(1);
+  const [currentIcon, setCurrentIcon] = useState();
   const navigate = useNavigate();
+  useEffect(() => {
+    const url = window.location;
+    for (let iconIndex in icons) {
+      for (let path of icons[iconIndex].activeOn) {
+        if (url.pathname.includes(path)) {
+          return setCurrentIcon(iconIndex);
+        }
+      }
+    }
+  }, []);
   function handleClick(index) {
     setCurrentIcon(index);
     navigate(icons[index].link);
   }
+
   return (
     <div id="user-footer">
       {icons.map((icon, index) => {
         let iconClass = "img-fluid footer-logo ";
-        if (currentIcon === index) iconClass += "footer-logo--clicked";
+
+        if (currentIcon == index) iconClass += "footer-logo--clicked";
+
         return (
           <span onClick={() => handleClick(index)} key={index}>
             <img className={iconClass} src={icon.img} />
