@@ -1,21 +1,24 @@
 import React, { useState } from "react";
 import useUser from "./../hooks/useUser";
-import useGroups from "./../hooks/useGroups";
+import useChats from "./../hooks/useChats";
 import { Button } from "react-bootstrap";
 
-export default function GroupInput({ currentGroup, setCurrentGroup }) {
+export default function ChatInput({ currentChat, setCurrentChat }) {
   const [users, setUsers, currentUser] = useUser();
-  const [groups, setGroups] = useGroups();
+  const [chats, setChats] = useChats();
   const [text, setText] = useState("");
 
   function handleSend() {
-    const groupsCopy = [...groups];
-    const currentGroupCopy = { ...currentGroup };
-    currentGroupCopy.chats = [...currentGroup.chats];
-    currentGroupCopy.chats.push({ senderId: currentUser.id, messeage: text });
-    groupsCopy[currentGroup.id] = currentGroupCopy;
-    setCurrentGroup(currentGroupCopy);
-    setGroups(groupsCopy);
+    const chatsCopy = [...chats];
+    const currentChatCopy = { ...currentChat };
+    currentChatCopy.messeages = [...currentChat.messeages];
+    currentChatCopy.messeages.push({
+      senderId: currentUser.id,
+      messeage: text,
+    });
+    chatsCopy[currentChat.id] = currentChatCopy;
+    setCurrentChat(currentChatCopy);
+    setChats(chatsCopy);
     setText("");
   }
 

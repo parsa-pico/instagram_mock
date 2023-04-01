@@ -62,7 +62,7 @@ export default function GroupInfo() {
     >
       <UserInfoBar currentGroup={currentGroup} />
 
-      <div style={{ height: barHeight, flexShrink: 0 }}>.</div>
+      {/* <div style={{ height: barHeight, flexShrink: 0 }}>.</div> */}
 
       <UserInfoMembers
         selectedMember={selectedMember}

@@ -27,7 +27,7 @@ export default function Groups() {
   }
 
   return (
-    <div id="groups">
+    <div className="groups">
       {groups.map((group, idx) => {
         const [senderName, lastChat] = getLastChat(group);
 

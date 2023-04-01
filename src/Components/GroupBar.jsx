@@ -11,6 +11,7 @@ export default function GroupBar({ currentGroup }) {
   function showGroupInfo() {
     navigate(`/user/groups/${currentGroup.id}/info`);
   }
+
   return (
     <div className="flex-row group-bar">
       <div onClick={() => navigate("/user/groups")}>

@@ -1,24 +1,53 @@
 [
-    {"name":"footbal friends","avatar":"/GroupAvatars/ball.jpg","id":0,
-    "members":[0,1,3],"chats":[
-        {
-            "senderId":3,"messeage":"hello"          
-         }  ,{
-            "senderId":0,"messeage":"hi"          
-         },{
-            "senderId":1,"messeage":"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium repellendus similique voluptatibus commodi. Accusamus iste sint adipisci. Ad quia alias soluta nostrum ipsam amet, ut ducimus dolorem quas inventore id?"          
-         }                    ]   
-    },
-    
-    {"name":"fellas","avatar":"/GroupAvatars/fellas.jfif","id":1,
-    "members":[1,3],"chats":[
-        {
-            "senderId":3,"messeage":"hello"          
-         }  ,{
-            "senderId":1,"messeage":"hi"          
-         },{
-            "senderId":1,"messeage":"what's up"
-         },{"senderId":3,"messeage":"Lorem ipsum, dolor sit ametum, dolor sit amet cons, cons, dolor sit amet cectetur adipisicing elit. Laudantium repellendus similique voluptatibus commodi. Accusamus iste sint adipisci.nt adipisci. Ad quia alias soluta nostrum ipsam amet, ut ducimus dolorem quas inventore id Ad quia alias soluta nostrum ipsam amet, ut ducimus dolorem quas inventore id?"}
-          ]   
-    }
+  {
+    "name": "footbal friends",
+    "avatar": "/GroupAvatars/ball.jpg",
+    "id": 0,
+    "pinnedChat": 2,
+    "members": [0, 1, 3],
+    "chats": [
+      {
+        "senderId": 3,
+        "messeage": "hello"
+      },
+      {
+        "senderId": 0,
+        "messeage": "hi"
+      },
+      {
+        "senderId": 1,
+        "messeage": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laudantium repellendus similique voluptatibus commodi. Accusamus iste sint adipisci. Ad quia alias soluta nostrum ipsam amet, ut ducimus dolorem quas inventore id?"
+      }
+    ]
+  },
+
+  {
+    "name": "fellas",
+    "avatar": "/GroupAvatars/fellas.jfif",
+    "id": 1,
+    "pinnedChat": 0,
+    "members": [1, 3],
+    "chats": [
+      {
+        "senderId": 3,
+        "messeage": "hello"
+      },
+      {
+        "senderId": 1,
+        "messeage": "hi"
+      },
+      {
+        "senderId": 1,
+        "messeage": "what's up"
+      },
+      {
+        "senderId": 3,
+        "messeage": "Lorem ipsum, dolor sit ametum, dolor sit amet cons, cons, dolor sit amet cectetur adipisicing elit. Laudantium repellendus similique voluptatibus commodi. Accusamus iste sint adipisci.nt adipisci. Ad quia alias soluta nostrum ipsam amet, ut ducimus dolorem quas inventore id Ad quia alias soluta nostrum ipsam amet, ut ducimus dolorem quas inventore id?"
+      },
+      {
+        "senderId": 3,
+        "messeage": "Lorem ipsum, dolor sit ametum, dolor sit amet cons, cons, dolor sit amet cectetur adipisicing elit. Laudantium repellendus similique voluptatibus commodi. Accusamus iste sint adipisci.nt adipisci. Ad quia alias soluta nostrum ipsam amet, ut ducimus dolorem quas inventore id Ad quia alias soluta nostrum ipsam amet, ut ducimus dolorem quas inventore id?"
+      }
+    ]
+  }
 ]

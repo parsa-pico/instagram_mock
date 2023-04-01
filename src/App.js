@@ -19,12 +19,14 @@ function App() {
     <div id="app">
       <groupsContext.Provider value={[groups, setGroups]}>
         <useresContext.Provider value={[users, setUseres]}>
-          <Routes>
-            <Route path="/" element={<Navigate to={"user/feed"} />} />
-            <Route path="login" />
+          <chatsContext.Provider value={[chats, setChats]}>
+            <Routes>
+              <Route path="/" element={<Navigate to={"user/feed"} />} />
+              <Route path="login" />
 
-            <Route path="user/*" element={<User />} />
-          </Routes>
+              <Route path="user/*" element={<User />} />
+            </Routes>
+          </chatsContext.Provider>
         </useresContext.Provider>
       </groupsContext.Provider>
     </div>

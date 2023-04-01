@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import groupsContext from "../Context/groupsContext";
 
-export default function useUser(id) {
+export default function useUser() {
   const [currentGroup, setCurrentGroup] = useState();
   const [groups, setGroups] = useContext(groupsContext);
   const params = useParams();

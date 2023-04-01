@@ -1,6 +1,6 @@
 [
     {"id":0,
-    "members":[0,1],"chats":[
+    "members":[0,1],"messeages":[
         {
             "senderId":0,"messeage":"hey there"          
          }  ,{
@@ -11,7 +11,7 @@
     },
     
     {"id":1,
-    "members":[1,2],"chats":[
+    "members":[1,2],"messeages":[
         {
             "senderId":2,"messeage":" dolor sit ametum, dolor "          
          }  ,{
