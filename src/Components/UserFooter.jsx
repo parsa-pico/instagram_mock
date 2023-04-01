@@ -6,10 +6,18 @@ import contact from "../Images/Icons/FooterIcons/chat.svg";
 import { useNavigate } from "react-router-dom";
 export default function UserFooter() {
   const icons = [
-    { img: group, link: "/user/groups" },
-    { img: lines, link: "/user/feed" },
-    { img: contact, link: "/user/contact" },
-    { img: user, link: "/user/setting" },
+    { img: group, link: "/user/groups", activeOn: ["group"] },
+    { img: lines, link: "/user/feed", activeOn: ["feed"] },
+    {
+      img: contact,
+      link: "/user/contact",
+      activeOn: ["contact", "add-friend"],
+    },
+    {
+      img: user,
+      link: "/user/setting",
+      activeOn: ["setting", "interest", "profile"],
+    },
   ];
 
   const [currentIcon, setCurrentIcon] = useState(1);

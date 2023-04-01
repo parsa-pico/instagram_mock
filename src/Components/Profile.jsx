@@ -70,11 +70,21 @@ export default function Profile() {
             value={currentUser.country || ""}
           />
         </div>
-        <DatePicker
-          selected={selectedDate}
-          onChange={(date) => setSelectedDate(date)}
-          className="profile__datepicker"
-        />
+
+        <div style={{ marginTop: "1rem" }}>
+          <label className="datepicker-label" htmlFor="my-datepicker">
+            <small>birth date:</small>
+          </label>
+          <div>
+            <DatePicker
+              id="my-datepicker"
+              selected={selectedDate}
+              onChange={(date) => setSelectedDate(date)}
+              className="profile__datepicker"
+            />
+          </div>
+        </div>
+
         <Button onClick={handleSubmit} className="mt-2">
           save
         </Button>
