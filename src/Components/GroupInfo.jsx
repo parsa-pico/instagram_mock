@@ -76,9 +76,8 @@ export default function GroupInfo() {
         show={showModal}
         onHide={handleCloseModal}
       >
-        <Modal.Header closeButton></Modal.Header>
         <Modal.Body>
-          aure you sure you want to remove &nbsp;
+          are you sure you want to remove &nbsp;
           <b>{selectedMemberName}</b> ?
         </Modal.Body>
         <Modal.Footer>

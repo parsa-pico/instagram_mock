@@ -1,0 +1,24 @@
+[
+    {"id":0,
+    "members":[0,1],"chats":[
+        {
+            "senderId":0,"messeage":"hey there"          
+         }  ,{
+            "senderId":0,"messeage":"howdy"          
+         },{
+            "senderId":1,"messeage":"llendus similique voluptatibus commodi. Accusamus iste sint adipisci. Ad quia alias soluta nostrum ipsam amet, ut ducimus dolorem quas inventore id?"          
+         }                    ]   
+    },
+    
+    {"id":1,
+    "members":[1,2],"chats":[
+        {
+            "senderId":2,"messeage":" dolor sit ametum, dolor "          
+         }  ,{
+            "senderId":1,"messeage":"ut ducimus dolorem "          
+         },{
+            "senderId":1,"messeage":"dolorem quas inven"
+         },{"senderId":2,"messeage":"sam amet, ut ducimus dolorem quas inventore id?"}
+          ]   
+    }
+]

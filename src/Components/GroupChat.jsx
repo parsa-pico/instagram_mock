@@ -6,7 +6,9 @@ export default function GroupChat({ currentGroup }) {
   const [users, setUsers, currentUser] = useUser();
 
   useEffect(() => {
-    document.getElementById("group-chat-last").scrollIntoView();
+    document
+      .getElementById("group-chat-last")
+      .scrollIntoView({ behavior: "auto" });
   });
   return (
     <div id="group-chat">

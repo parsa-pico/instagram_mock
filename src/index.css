@@ -217,7 +217,10 @@ div[role="dialog"] {
   border-radius: 0;
   border-bottom: 2px black solid;
 }
-
+.react-datepicker-wrapper {
+  margin: 2rem 0;
+  width: auto !important;
+}
 /* interests */
 #interests {
   height: 100%;
