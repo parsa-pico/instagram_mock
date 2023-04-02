@@ -3,6 +3,10 @@
   --mobile-height: 90vh;
 }
 #root {
+  width: 100vw;
+  height: 100vh;
+}
+#app {
   display: flex;
   position: absolute;
   top: 50%;
@@ -16,9 +20,6 @@
   border-radius: 25px;
   box-shadow: 0 0 10px 4px #b3b3b3cf;
   align-content: stretch;
-}
-#app {
-  width: 100%;
 }
 body {
   margin: 0;
@@ -77,6 +78,12 @@ code {
 }
 .display-none {
   display: none !important;
+}
+.display-block {
+  display: block !important;
+}
+.far-top {
+  top: -9999px;
 }
 /* off canvas , modal , role dialog */
 div[role="dialog"],
@@ -497,6 +504,7 @@ div[role="dialog"] {
 
 /* individual group */
 .group {
+  position: relative;
   background-color: #bff1ff;
   display: flex;
   flex-direction: column;
@@ -551,6 +559,7 @@ div[role="dialog"] {
 
 /* group chat */
 .group-chat {
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -559,6 +568,32 @@ div[role="dialog"] {
   /* margin-top: 6vh; */
   overflow: scroll;
   transition: all 1s;
+}
+#chat-menu {
+  position: absolute;
+  top: -9999px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  list-style-type: none;
+  padding: 1rem 0.5rem;
+  box-shadow: 0 0 5px 1px #d8d8d8;
+}
+.chat-menu__item {
+  margin: 0.5rem 0.2rem;
+  cursor: pointer;
+}
+.chat-menu__item__pin-icon {
+  width: 20px;
+  height: 20px;
+  transform: rotateZ(270deg);
+  margin-right: 0.3rem;
+}
+.chat-menu__item__copy-icon {
+  width: 20px;
+  height: 20px;
+
+  margin-right: 0.3rem;
 }
 @keyframes showPinned {
   0% {
@@ -592,6 +627,7 @@ div[role="dialog"] {
 .person-chat-caption {
   white-space: pre-line;
   margin-bottom: 0.5rem;
+  cursor: pointer;
 }
 .person-chat-wrapper--current-user {
   align-self: flex-end;

@@ -5,8 +5,12 @@ import GroupChat from "./GroupChat";
 import useGroups from "../hooks/useGroups";
 import GroupInput from "./GroupInput";
 import GroupPin from "./GroupPin";
+import GroupChatMenu from "./GroupChatMenu";
+
 export default function Group() {
   const [groups, setGroups, currentGroup, setCurrentGroup] = useGroups();
+  const [showChatMenu, setShowChatMenu] = useState(false);
+  const [selectedText, setSelectedText] = useState({});
 
   useEffect(() => {
     document.getElementById("user-footer").className = "hidden display-none";
@@ -14,6 +18,7 @@ export default function Group() {
       document.getElementById("user-footer").className = "";
     };
   }, []);
+
   function handleRemovePin() {
     document
       .getElementsByClassName("group-pin-wrapper")[0]
@@ -45,10 +50,21 @@ export default function Group() {
         handleRemovePin={handleRemovePin}
         currentGroup={currentGroup}
       />
-      <GroupChat currentGroup={currentGroup} />
+      <GroupChat
+        setShowChatMenu={setShowChatMenu}
+        currentGroup={currentGroup}
+        setSelectedText={setSelectedText}
+      />
       <GroupInput
         setCurrentGroup={setCurrentGroup}
         currentGroup={currentGroup}
+      />
+      <GroupChatMenu
+        groupsState={[groups, setGroups]}
+        currentGroupState={[currentGroup, setCurrentGroup]}
+        selectedText={selectedText}
+        show={showChatMenu}
+        setShow={setShowChatMenu}
       />
     </div>
   );
