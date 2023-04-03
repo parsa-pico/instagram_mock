@@ -1,6 +1,6 @@
 :root {
   --mobile-width: 360px;
-  --mobile-height: 90vh;
+  --mobile-height: 95vh;
 }
 #root {
   width: 100vw;
@@ -54,6 +54,17 @@ body {
 .hidden {
   opacity: 0;
 }
+.bare-visible {
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.rotate-z-90 {
+  transform: rotateZ(180deg);
+}
+.rotate-z-90:hover {
+  transform: scale(1.1) rotateZ(180deg) !important;
+}
 /* scroll bar */
 
 /* width */
@@ -88,6 +99,13 @@ code {
 }
 .far-top {
   top: -9999px !important ;
+}
+.z-index-high {
+  z-index: 900000;
+  position: absolute;
+}
+.Toastify__toast-container {
+  z-index: 200000;
 }
 /* off canvas , modal , role dialog */
 div[role="dialog"],
@@ -135,7 +153,7 @@ div[role="dialog"] {
 #user-footer {
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   align-items: center;
   justify-items: center;
 }
@@ -185,6 +203,7 @@ div[role="dialog"] {
   padding: 0 1rem;
 }
 .post__caption-wrapper {
+  white-space: pre-line;
   padding-left: 0.5rem;
   font-family: "Alkatra", cursive;
 }
@@ -435,6 +454,7 @@ div[role="dialog"] {
 /*  add friends */
 
 #add-friend {
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -481,6 +501,35 @@ div[role="dialog"] {
 }
 .send-req-btn {
   width: 120px;
+}
+.add-friend__add-contact {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  padding: 1rem;
+  border-radius: 50%;
+  background-color: #65a5dd;
+  transition: all 0.1s;
+}
+.add-friend__add-contact:hover,
+.add-friend__add-contact:active,
+.add-friend__add-contact:focus {
+  background-color: #3690de;
+}
+.add-friend__add-contact__img {
+  --size: 30px;
+  width: var(--size);
+  height: var(--size);
+  filter: invert(97%) sepia(100%) saturate(0%) hue-rotate(208deg)
+    brightness(109%) contrast(101%);
+}
+/* add contact */
+.add-contact__input-wrapper {
+  margin: 2rem;
+}
+.add-contact__error {
+  margin-top: 1rem;
 }
 /* groups  */
 .groups {
@@ -842,4 +891,46 @@ div[role="dialog"] {
   height: 100%;
   padding: 2rem 1rem;
   padding-top: 1rem;
+}
+/* add post */
+#add-post {
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: flex-start;
+  padding: 1rem;
+}
+.add-post__heading {
+  text-align: center;
+  font-family: "Anton", sans-serif;
+  margin: 2rem 0;
+  margin-bottom: 3rem;
+}
+.add-post__image-preview {
+  display: flex;
+  flex-direction: column;
+}
+.add-post__image-preview__caption {
+  text-align: center;
+  width: 100%;
+  display: block;
+  color: #888;
+}
+.add-post__image-preview__img {
+  max-height: 400px;
+  object-fit: cover;
+}
+.add-post__caption {
+  resize: none;
+  margin-top: 1rem;
+}
+.add-post__bar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.add-post__progress {
+  margin-top: 2rem;
 }

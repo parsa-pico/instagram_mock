@@ -1,5 +1,17 @@
 [
-    { "avatar": "/UserAvatars/person1.jpg","img":"/PostImages/forest.jpg", "sender": "julia", "caption": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim quam sit nemo est corrupti voluptatum necessitatibus officia. Incidunt, optio minus." },
-    { "avatar": "/UserAvatars/person4.jfif","img":"/PostImages/city.jpg", "sender": "Eva", "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptate vero delectus suscipit. Atque eos accusamus possimus ipsam itaque et laboriosam voluptatem quae cupiditate magni nam, id saepe labore aliquid!" },
-    { "avatar": "/UserAvatars/person3.avif","img":"/PostImages/popcorn.jpg", "sender": "Bob", "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, inventore?" }
-  ]
+  {
+    "userId": 0,
+    "img": "/PostImages/forest.jpg",
+    "caption": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim quam sit nemo est corrupti voluptatum necessitatibus officia. Incidunt, optio minus."
+  },
+  {
+    "userId": 2,
+    "img": "/PostImages/city.jpg",
+    "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores voluptate vero delectus suscipit. Atque eos accusamus possimus ipsam itaque et laboriosam voluptatem quae cupiditate magni nam, id saepe labore aliquid!"
+  },
+  {
+    "userId": 3,
+    "img": "/PostImages/popcorn.jpg",
+    "caption": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae, inventore?"
+  }
+]

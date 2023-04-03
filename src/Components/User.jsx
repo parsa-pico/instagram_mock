@@ -14,12 +14,14 @@ import GroupInfo from "./GroupInfo";
 import Chats from "./Chats";
 import Chat from "./Chat";
 import AddMember from "./AddMember";
+import AddPost from "./AddPost";
 export default function User() {
   return (
     <div id="user">
       <UserHeader />
       <Routes>
         <Route path="feed" element={<Feed />} />
+        <Route path="add-post" element={<AddPost />} />
         <Route path="setting" element={<Setting />} />
         <Route path="profile" element={<Profile />} />
         <Route path="interest-form" element={<InteresetForm />} />

@@ -36,7 +36,7 @@ export default function InterestsOffCanvas({
             delete interest
           </Button>
           <Button
-            variant="info"
+            variant="secondary"
             className="interest-canvas-close"
             onClick={handleClose}
           >

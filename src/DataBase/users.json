@@ -1,55 +1,76 @@
 [
-    {"id":0,"username":"Julia","avatar":"/UserAvatars/person1.jpg"},
-    {"id":1,"username":"Emma","avatar":"/UserAvatars/person2.jpg",
-    "country":"Spain",
-    "birthDate":"2001-01-01",
-     "interests": [
-        {
-          "category": "cooking",
-          "speciality": "sushi making",
-          "frequency": "Occasionally",
-          "level": "Beginner"
-        },
-        {
-          "category": "entertainment",
-          "speciality": "movies",
-          "frequency": "Everyday",
-          "level": "Pro"
-        },
-        {
-          "category": "travel",
-          "speciality": "nature retreats",
-          "frequency": "Occasionally",
-          "level": "Pro"
-        },
-        {
-          "category": "creative",
-          "speciality": "painting",
-          "frequency": "Frequently",
-          "level": "God"
-        },
-        {
-          "category": "learning",
-          "speciality": "reading",
-          "frequency": "Everyday",
-          "level": "Intermidate"
-        },
-        {
-          "category": "entertainment",
-          "speciality": "music",
-          "frequency": "Everyday",
-          "level": "God"
-        },
-        {
-          "category": "travel",
-          "speciality": "city breaks",
-          "frequency": "Occasionally",
-          "level": "Beginner"
-        }],"friends":[{"userId":2,"situation":"pending"},
-                     {"userId":3,"situation":"accepted"}
-                
-                    ]
-    },
-    {"id":2,"username":"Bob","avatar":"/UserAvatars/person3.avif"},
-    {"id":3,"username":"Eva","avatar":"/UserAvatars/person4.jfif"}
+  {
+    "id": 0,
+    "username": "Julia",
+    "phoneNumber": "09121234567",
+    "avatar": "/UserAvatars/person1.jpg"
+  },
+  {
+    "id": 1,
+    "username": "Emma",
+    "avatar": "/UserAvatars/person2.jpg",
+    "country": "Spain",
+    "phoneNumber": "09131234567",
+    "birthDate": "2001-01-01",
+    "interests": [
+      {
+        "category": "cooking",
+        "speciality": "sushi making",
+        "frequency": "Occasionally",
+        "level": "Beginner"
+      },
+      {
+        "category": "entertainment",
+        "speciality": "movies",
+        "frequency": "Everyday",
+        "level": "Pro"
+      },
+      {
+        "category": "travel",
+        "speciality": "nature retreats",
+        "frequency": "Occasionally",
+        "level": "Pro"
+      },
+      {
+        "category": "creative",
+        "speciality": "painting",
+        "frequency": "Frequently",
+        "level": "God"
+      },
+      {
+        "category": "learning",
+        "speciality": "reading",
+        "frequency": "Everyday",
+        "level": "Intermidate"
+      },
+      {
+        "category": "entertainment",
+        "speciality": "music",
+        "frequency": "Everyday",
+        "level": "God"
+      },
+      {
+        "category": "travel",
+        "speciality": "city breaks",
+        "frequency": "Occasionally",
+        "level": "Beginner"
+      }
+    ],
+    "friends": [
+      { "userId": 2, "situation": "pending" },
+      { "userId": 3, "situation": "accepted" }
+    ]
+  },
+  {
+    "id": 2,
+    "phoneNumber": "09141234567",
+    "username": "Bob",
+    "avatar": "/UserAvatars/person3.avif"
+  },
+  {
+    "id": 3,
+    "phoneNumber": "09151234567",
+    "username": "Eva",
+    "avatar": "/UserAvatars/person4.jfif"
+  }
 ]

@@ -3,11 +3,13 @@ import { Button, Image } from "react-bootstrap";
 import { ToastContainer, toast, Zoom } from "react-toastify";
 import useUser from "../hooks/useUser";
 import searchIcon from "../Images/Icons/search.svg";
+import addPersonIcon from "../Images/Icons/addPerson.svg";
 import { currentUserId } from "../utils/commonFunctions";
+import AddContact from "./AddContact";
 export default function AddFriend() {
   const [users, setUsers, currentUser, setCurrentUser] = useUser();
   const [foundUsers, setFoundUsers] = useState([]);
-  // const [search, setSearch] = useState("");
+  const [showAddContact, setShowAddContact] = useState(false);
   function search(value) {
     if (value === "") return setFoundUsers([]);
     const filterd = users.filter((user) =>
@@ -79,6 +81,16 @@ export default function AddFriend() {
             );
           })}
       </div>
+      <div
+        onClick={() => setShowAddContact(true)}
+        className="add-friend__add-contact"
+      >
+        <img
+          className="img-fluid add-friend__add-contact__img "
+          src={addPersonIcon}
+        />
+      </div>
+      <AddContact show={showAddContact} setShow={setShowAddContact} />
     </div>
   );
 }

@@ -29,7 +29,7 @@ export default function GroupChatMenu({
     setCurrentGroup(currentGroupCopy);
     setShow(false);
   }
-  console.log(document.getElementById("chat-menu"));
+
   return (
     <>
       <div id="chat-menu" className={menuClass}>

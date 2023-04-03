@@ -3,11 +3,18 @@ import user from "../Images/Icons/FooterIcons/user.svg";
 import group from "../Images/Icons/FooterIcons/group.svg";
 import lines from "../Images/Icons/FooterIcons/lines.svg";
 import contact from "../Images/Icons/FooterIcons/chat.svg";
-import { useNavigate } from "react-router-dom";
+import plus from "../Images/Icons/FooterIcons/plus.png";
+import { useLocation, useNavigate } from "react-router-dom";
 export default function UserFooter() {
+  const location = useLocation();
   const icons = [
     { img: group, link: "/user/groups", activeOn: ["group"] },
     { img: lines, link: "/user/feed", activeOn: ["feed"] },
+    {
+      img: plus,
+      link: "/user/add-post",
+      activeOn: ["post"],
+    },
     {
       img: contact,
       link: "/user/contact",
@@ -31,7 +38,7 @@ export default function UserFooter() {
         }
       }
     }
-  }, []);
+  }, [location]);
   function handleClick(index) {
     setCurrentIcon(index);
     navigate(icons[index].link);

@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import { Image } from "react-bootstrap";
-import postsDB from "../DataBase/posts.json";
+import usePosts from "../hooks/usePosts";
+import useUser from "./../hooks/useUser";
 
 export default function Feed() {
-  const [posts, setPosts] = useState(postsDB);
+  const [posts, setPosts] = usePosts();
+  const [users, setUsers] = useUser();
   return (
     <div id="feed">
       {posts.map((post, index) => {
+        const user = users.find((user) => user.id === post.userId);
         return (
           <div key={index} className="post">
             <div className="post__header">
-              <Image className="post__avatar" fluid src={post.avatar} alt="" />
-              <h5>{post.sender}</h5>
+              <Image className="post__avatar" fluid src={user.avatar} alt="" />
+              <h5>{user.username}</h5>
             </div>
             <div className="post__img-wrapper">
               <Image fluid src={post.img} />
