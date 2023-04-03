@@ -5,7 +5,7 @@ export default function UserHeader() {
   const navigate = useNavigate();
   return (
     <div id="user-header">
-      <h3>social media </h3>
+      <h3>common interests </h3>
       <div onClick={() => navigate("/user/chats")}>
         <img className="img-fluid telegram-logo" src={telegramLogo} alt="" />
       </div>

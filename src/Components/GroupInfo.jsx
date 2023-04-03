@@ -4,8 +4,10 @@ import { useNavigate, useParams } from "react-router-dom";
 import useGroups from "../hooks/useGroups";
 import backArrow from "../Images/Icons/back-arrow.svg";
 import useUser from "./../hooks/useUser";
-import UserInfoBar from "./UserInfoBar";
-import UserInfoMembers from "./UserInfoMembers";
+import AddMember from "./AddMember";
+import RemoveMemberModal from "./RemoveMemberModal";
+import GroupInfoBar from "./GroupInfoBar";
+import GroupInfoMembers from "./GroupInfoMembers";
 
 export default function GroupInfo() {
   const [groups, setGroups, currentGroup, setCurrentGroup] = useGroups();
@@ -14,9 +16,9 @@ export default function GroupInfo() {
   const navigate = useNavigate();
   const [selectedMember, setSelectedMember] = useState(null);
 
-  const [showModal, setShowModal] = useState(false);
-  const handleCloseModal = () => setShowModal(false);
-  const handleShowModal = () => setShowModal(true);
+  const [showRemoveModal, setShowRemoveModal] = useState(false);
+  const handleCloseRemoveModal = () => setShowRemoveModal(false);
+  const handleShowModal = () => setShowRemoveModal(true);
   const [selectedMemberName, setSelectedMemberName] = useState("");
 
   useEffect(() => {
@@ -60,41 +62,22 @@ export default function GroupInfo() {
       className="group "
       id="group-info"
     >
-      <UserInfoBar currentGroup={currentGroup} />
+      <GroupInfoBar currentGroup={currentGroup} />
 
-      {/* <div style={{ height: barHeight, flexShrink: 0 }}>.</div> */}
-
-      <UserInfoMembers
+      <GroupInfoMembers
         selectedMember={selectedMember}
         setSelectedMember={setSelectedMember}
-        closeModal={handleCloseModal}
+        closeModal={handleCloseRemoveModal}
         showModal={handleShowModal}
         currentGroup={currentGroup}
       />
-      <Modal
-        backdropClassName="my-backdrop"
-        show={showModal}
-        onHide={handleCloseModal}
-      >
-        <Modal.Body>
-          are you sure you want to remove &nbsp;
-          <b>{selectedMemberName}</b> ?
-        </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseModal}>
-            Cancel
-          </Button>
-          <Button
-            variant="primary"
-            onClick={() => {
-              removeMember();
-              handleCloseModal();
-            }}
-          >
-            Yes
-          </Button>
-        </Modal.Footer>
-      </Modal>
+
+      <RemoveMemberModal
+        showModal={showRemoveModal}
+        handleCloseModal={handleCloseRemoveModal}
+        selectedMemberName={selectedMemberName}
+        removeMember={removeMember}
+      />
     </div>
   );
 }

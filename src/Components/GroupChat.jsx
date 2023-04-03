@@ -14,7 +14,7 @@ export default function GroupChat({
       document
         .getElementById("group-chat-last")
         .scrollIntoView({ behavior: "auto" });
-    }, 500);
+    }, 50);
   }, []);
 
   function computeX(e) {
@@ -24,7 +24,7 @@ export default function GroupChat({
     let localPosition = e.clientX - actualOffsetLeft;
     //after 60 percent of mobile width
     if (localPosition > 0.6 * app.clientWidth)
-      localPosition -= 0.7 * chatMenu.clientWidth;
+      localPosition -= chatMenu.clientWidth;
     return localPosition;
   }
 

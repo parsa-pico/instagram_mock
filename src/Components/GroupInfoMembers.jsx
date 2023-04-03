@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Button, Image } from "react-bootstrap";
 import useGroups from "../hooks/useGroups";
-import useUser from "./../hooks/useUser";
+import useUser from "../hooks/useUser";
 import trash from "../Images/Icons/trash2.png";
-export default function UserInfoMembers({
+export default function GroupInfoMembers({
   selectedMember,
   setSelectedMember,
   closeModal,

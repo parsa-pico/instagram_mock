@@ -13,6 +13,7 @@ import Group from "./Group";
 import GroupInfo from "./GroupInfo";
 import Chats from "./Chats";
 import Chat from "./Chat";
+import AddMember from "./AddMember";
 export default function User() {
   return (
     <div id="user">
@@ -27,6 +28,7 @@ export default function User() {
         <Route path="groups" element={<Groups />} />
         <Route path="groups/:id" element={<Group />} />
         <Route path="groups/:id/info" element={<GroupInfo />} />
+        <Route path="groups/:id/add-member" element={<AddMember />} />
         <Route path="chats" element={<Chats />} />
         <Route path="chats/:id" element={<Chat />} />
       </Routes>

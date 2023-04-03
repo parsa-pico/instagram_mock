@@ -25,15 +25,24 @@ export default function InterestsOffCanvas({
         <h5 style={{ textTransform: "capitalize" }}>{interest.category}</h5>
         <h5>Level:</h5>
         <h5 style={{ textTransform: "capitalize" }}>{interest.level}</h5>
-        <Button
-          variant="danger"
-          className="interest-canvas-delete"
-          onClick={() => {
-            deleteInterest(interest.speciality);
-          }}
-        >
-          delete interest
-        </Button>
+        <div className="interest-canvas-btns">
+          <Button
+            variant="danger"
+            className="interest-canvas-delete"
+            onClick={() => {
+              deleteInterest(interest.speciality);
+            }}
+          >
+            delete interest
+          </Button>
+          <Button
+            variant="info"
+            className="interest-canvas-close"
+            onClick={handleClose}
+          >
+            close
+          </Button>
+        </div>
       </Modal.Body>
     </Modal>
   );
