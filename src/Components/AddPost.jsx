@@ -46,7 +46,11 @@ export default function AddPost() {
   }, [page]);
   return (
     <div id="add-post">
-      <AddPostBar imageName={imageName} pageState={[page, setPage]} />
+      <AddPostBar
+        lastPage={lastPage}
+        imageName={imageName}
+        pageState={[page, setPage]}
+      />
       <h2 className="add-post__heading">New Post</h2>
 
       {page === 0 && (

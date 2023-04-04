@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from "react";
 import backArrow from "../Images/Icons/back-arrow.svg";
 import { useNavigate } from "react-router-dom";
-export default function AddPostBar({
-  pageState,
-  lastPage,
-
-  imageName,
-}) {
+export default function AddPostBar({ pageState, lastPage, imageName }) {
   const navigate = useNavigate();
 
   const [page, setPage] = pageState;
@@ -30,7 +25,9 @@ export default function AddPostBar({
   useEffect(() => {
     if (page === 0)
       setBackArrowClass("img-fluid group-bar__arrow group-info__arrow hidden");
-    else setBackArrowClass("img-fluid group-bar__arrow group-info__arrow");
+    else if (page === 2) {
+      setBackArrowClass("img-fluid group-bar__arrow group-info__arrow hidden");
+    } else setBackArrowClass("img-fluid group-bar__arrow group-info__arrow");
   }, [page]);
   useEffect(() => {
     if (!imageName)
