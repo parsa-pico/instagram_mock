@@ -126,6 +126,66 @@ div[role="dialog"] {
   color: #888;
   font-size: 0.7rem;
 }
+/* login */
+.login-athlete {
+  position: relative;
+  height: 100vh;
+}
+.login-athlete__background {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+.login-page {
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.login__heading {
+  font-family: "Anton", sans-serif;
+  font-size: 1.7rem;
+}
+.login-form {
+  padding: 5rem 3rem;
+  border-radius: 40px;
+  border: 1px solid #dadce0;
+  max-width: 700px;
+  text-align: center;
+  position: relative;
+}
+
+.login-form--withbg {
+  background-color: whitesmoke;
+  box-shadow: 0px 0px 8px 0px #00000075;
+}
+.login-input {
+  margin: 2rem 0;
+}
+.login-create-account {
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+.login__login-btn {
+  margin-top: 1rem;
+  width: 100%;
+}
+/* register */
+.register__back-arrow {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
 /* user */
 #user {
   display: flex;
@@ -210,6 +270,7 @@ div[role="dialog"] {
 
 /* setting */
 #setting {
+  position: relative;
   overflow: scroll;
   display: flex;
   flex-direction: column;
@@ -219,7 +280,17 @@ div[role="dialog"] {
   width: 100%;
   padding-top: 3rem;
 }
-
+.setting__logout {
+  --size: 40px;
+  width: var(--size);
+  height: var(--size);
+  position: absolute;
+  transform: rotateZ(180deg) rotateX(180deg);
+  filter: invert(15%) sepia(75%) saturate(5735%) hue-rotate(351deg)
+    brightness(80%) contrast(92%);
+  top: 20px;
+  left: 20px;
+}
 .setting__profile {
   display: flex;
   flex-direction: column;
@@ -398,7 +469,7 @@ div[role="dialog"] {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   width: 100%;
   border-top: 1px solid rgba(122, 119, 119, 0.389);
   padding-top: 1rem;
@@ -413,7 +484,7 @@ div[role="dialog"] {
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
 }
 .req-wrapper {

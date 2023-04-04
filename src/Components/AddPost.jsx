@@ -6,6 +6,7 @@ import AddPostPreviewImage from "./AddPostPreviewImage";
 import usePosts from "../hooks/usePosts";
 import { currentUserId } from "./../utils/commonFunctions";
 import { useNavigate } from "react-router-dom";
+
 const uploadFolder = "/UploadStuff/";
 
 export default function AddPost() {

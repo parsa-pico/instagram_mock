@@ -2,12 +2,14 @@
   {
     "id": 0,
     "username": "Julia",
+
     "phoneNumber": "09121234567",
     "avatar": "/UserAvatars/person1.jpg"
   },
   {
     "id": 1,
     "username": "Emma",
+    "password": "123",
     "avatar": "/UserAvatars/person2.jpg",
     "country": "Spain",
     "phoneNumber": "09131234567",

@@ -9,12 +9,10 @@ import useresContext from "./Context/useresContext.js";
 import groupsContext from "./Context/groupsContext";
 import chatsContext from "./Context/chatsContext";
 import PostsContext from "./Context/postsContext";
+import Login from "./Components/Login";
+import Register from "./Components/Register";
 
 function App() {
-  useEffect(() => {
-    localStorage.setItem("currentUserIndex", 1);
-  }, []);
-
   const [users, setUseres] = useState(useresData);
   const [groups, setGroups] = useState(groupsData);
   const [chats, setChats] = useState(chatsData);
@@ -27,8 +25,9 @@ function App() {
           <useresContext.Provider value={[users, setUseres]}>
             <chatsContext.Provider value={[chats, setChats]}>
               <Routes>
-                <Route path="/" element={<Navigate to={"user/feed"} />} />
-                <Route path="login" />
+                <Route path="/" element={<Navigate to="login" />} />
+                <Route path="login" element={<Login />} />
+                <Route path="register" element={<Register />} />
 
                 <Route path="user/*" element={<User />} />
               </Routes>

@@ -34,9 +34,9 @@ export default function AddContact({ show, setShow }) {
   function addContact() {
     const id = findContact();
 
-    if (id === null) return setError("contact not found");
+    if (id === null) return toast.error("user not found");
     if (isAlreadyFriend(id))
-      return setError("this user is already your friend");
+      return toast.error("this user is already your friend");
     const index = currentUserId();
     const usersCopy = [...users];
     let currentUserCopy = { ...currentUser };

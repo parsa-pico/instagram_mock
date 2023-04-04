@@ -28,27 +28,30 @@ export default function Groups() {
 
   return (
     <div className="groups">
-      {groups.map((group, idx) => {
-        const [senderName, lastChat] = getLastChat(group);
+      {groups &&
+        groups
+          .filter((group) => group.members.includes(currentUser.id))
+          .map((group, idx) => {
+            const [senderName, lastChat] = getLastChat(group);
 
-        return (
-          <div
-            onClick={() => showGroup(group.id)}
-            key={idx}
-            className="groups__row"
-          >
-            <div>
-              <img className="img-fluid groups__img" src={group.avatar} />
-            </div>
-            <div className="groups__header">
-              <h2 className="groups__heading">{group.name}</h2>
-              <div>
-                <p className="groups__sender">{senderName}</p>:{lastChat}
+            return (
+              <div
+                onClick={() => showGroup(group.id)}
+                key={idx}
+                className="groups__row"
+              >
+                <div>
+                  <img className="img-fluid groups__img" src={group.avatar} />
+                </div>
+                <div className="groups__header">
+                  <h2 className="groups__heading">{group.name}</h2>
+                  <div>
+                    <p className="groups__sender">{senderName}</p>:{lastChat}
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-        );
-      })}
+            );
+          })}
     </div>
   );
 }
