@@ -1,6 +1,6 @@
 :root {
-  --mobile-width: 360px;
-  --mobile-height: 95vh;
+  --mobile-width: 100vw;
+  --mobile-height: 100vh;
 }
 #root {
   width: 100vw;
@@ -8,17 +8,17 @@
 }
 #app {
   display: flex;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  /* position: absolute; */
+  /* top: 50%; */
+  /* left: 50%; */
+  /* transform: translate(-50%, -50%); */
   width: var(--mobile-width);
   height: var(--mobile-height);
 
   background-color: rgb(255, 255, 255);
-  border: 5px solid black;
-  border-radius: 25px;
-  box-shadow: 0 0 10px 4px #b3b3b3cf;
+  /* border: 5px solid black; */
+  /* border-radius: 25px; */
+  /* box-shadow: 0 0 10px 4px #b3b3b3cf; */
   align-content: stretch;
 }
 body {
@@ -110,16 +110,16 @@ code {
 /* off canvas , modal , role dialog */
 div[role="dialog"],
 .my-backdrop {
-  width: var(--mobile-width);
+  /* width: var(--mobile-width);
   height: var(--mobile-height);
   position: absolute;
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
-  border-radius: 25px;
+  border-radius: 25px; */
 }
 div[role="dialog"] {
-  width: 320px;
+  /* width: 320px; */
 }
 
 .you {

@@ -19,7 +19,9 @@ export default function GroupChat({
 
   function computeX(e) {
     const app = document.getElementById("app");
-    const actualOffsetLeft = app.offsetLeft - app.clientWidth / 2.0;
+    let actualOffsetLeft = app.offsetLeft - app.clientWidth / 2.0;
+    //temporary
+    actualOffsetLeft = 0;
     const chatMenu = document.getElementById("chat-menu");
     let localPosition = e.clientX - actualOffsetLeft;
     //after 60 percent of mobile width
@@ -31,9 +33,10 @@ export default function GroupChat({
   function computeY(e) {
     const app = document.getElementById("app");
     let actualOffsetTop = app.offsetTop - app.clientHeight / 2.0;
-
+    //temporary
+    actualOffsetTop = 0;
     actualOffsetTop += document.getElementById("user-header").clientHeight;
-
+    console.log(actualOffsetTop);
     const localPosition = e.clientY - actualOffsetTop;
     return localPosition;
   }

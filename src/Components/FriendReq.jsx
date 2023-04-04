@@ -33,7 +33,7 @@ export default function FriendReq() {
 
   return (
     <div id="friend-req">
-      <ToastContainer autoClose={1000} transition={Zoom} />
+      <ToastContainer autoClose={1500} transition={Zoom} />
       <h3 className="friend-req__heading">Friend requests</h3>
       {currentUser &&
         currentUser.friends &&
