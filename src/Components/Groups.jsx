@@ -28,6 +28,7 @@ export default function Groups() {
 
   return (
     <div className="groups">
+      <h2 style={{ marginLeft: "1rem" }}>Groups</h2>
       {groups &&
         groups
           .filter((group) => group.members.includes(currentUser.id))
