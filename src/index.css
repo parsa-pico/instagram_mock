@@ -2,24 +2,28 @@
   --mobile-width: 100vw;
   --mobile-height: 100vh;
 }
+
 #root {
   width: 100vw;
   height: 100vh;
 }
 #app {
   display: flex;
-  /* position: absolute; */
-  /* top: 50%; */
-  /* left: 50%; */
-  /* transform: translate(-50%, -50%); */
   width: var(--mobile-width);
   height: var(--mobile-height);
-
   background-color: rgb(255, 255, 255);
-  /* border: 5px solid black; */
-  /* border-radius: 25px; */
-  /* box-shadow: 0 0 10px 4px #b3b3b3cf; */
   align-content: stretch;
+}
+.app--border-mode {
+  width: 360px !important;
+  height: 95vh !important;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid black;
+  border-radius: 25px;
+  box-shadow: 0 0 10px 4px #b3b3b3cf;
 }
 body {
   margin: 0;
@@ -108,18 +112,20 @@ code {
   z-index: 200000;
 }
 /* off canvas , modal , role dialog */
-div[role="dialog"],
-.my-backdrop {
-  /* width: var(--mobile-width);
-  height: var(--mobile-height);
-  position: absolute;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-  border-radius: 25px; */
-}
-div[role="dialog"] {
-  /* width: 320px; */
+@media screen and (min-width: 800px) {
+  div[role="dialog"],
+  .my-backdrop {
+    width: 360px;
+    height: 95vh;
+    position: absolute;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    border-radius: 25px;
+  }
+  div[role="dialog"] {
+    width: 320px;
+  }
 }
 
 .you {
@@ -459,6 +465,7 @@ div[role="dialog"] {
 
 /* contact  */
 #contact {
+  padding-left: 1rem;
   overflow: scroll;
   display: flex;
   flex-direction: column;
@@ -483,7 +490,7 @@ div[role="dialog"] {
 }
 .requests {
   padding-top: 1rem;
-  padding-left: 1rem;
+
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -492,13 +499,14 @@ div[role="dialog"] {
 }
 .req-wrapper {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   padding-right: 1rem;
+  width: 100%;
 }
 .req__tick {
-  width: 15%;
-  aspect-ratio: 1/1;
+  width: 50px;
+  height: 50px;
   background-color: white;
   border: 1px solid rgb(73, 161, 77);
   border-radius: 100%;
@@ -509,8 +517,8 @@ div[role="dialog"] {
   background-color: rgb(73, 161, 77);
 }
 .req__cross {
-  width: 15%;
-  aspect-ratio: 1/1;
+  width: 50px;
+  height: 50px;
   background-color: white;
   border: 1px solid rgb(183, 62, 58);
   border-radius: 100%;
@@ -524,6 +532,19 @@ div[role="dialog"] {
 }
 .req__heading {
   padding-right: 0.3rem;
+}
+/* friends / contacts */
+#friends {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+}
+.friends-wrapper {
+  cursor: pointer;
 }
 /*  add friends */
 

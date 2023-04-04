@@ -30,7 +30,7 @@ export default function Register() {
     if (foundUser) return setGenericError("user name exists");
     const usersCopy = [...users];
     const id = users.length;
-    usersCopy.push({ ...userDetails, id, interests: [] });
+    usersCopy.push({ ...userDetails, id, interests: [], friends: [] });
     setUsers(usersCopy);
 
     localStorage.setItem("currentUserIndex", id);

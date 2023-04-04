@@ -1,19 +1,23 @@
 import React, { useEffect } from "react";
 import { Button, Image } from "react-bootstrap";
 import useUser from "../hooks/useUser";
-import { currentUserId } from "../utils/commonFunctions";
+import { currentUserId, getUser } from "../utils/commonFunctions";
 import { ToastContainer, toast, Zoom } from "react-toastify";
 export default function FriendReq() {
   const [users, setUsers, currentUser, setCurrentUser] = useUser();
 
-  function accpetFriend(reqIndex) {
+  function accpetFriend(req, reqIndex) {
     const index = currentUserId();
     const usersCopy = [...users];
     let currentUserCopy = { ...currentUser };
     currentUserCopy.friends = [...currentUserCopy.friends];
-    currentUserCopy.friends[reqIndex].situation = "accpeted";
-
+    currentUserCopy.friends[reqIndex].situation = "accepted";
     usersCopy[index] = currentUserCopy;
+    const friendId = req.userId;
+    const friendCopy = { ...getUser(friendId, users) };
+    friendCopy.friends = [...friendCopy.friends];
+    friendCopy.friends.push({ userId: currentUser.id, situation: "accepted" });
+    usersCopy[friendCopy.id] = friendCopy;
     setUsers(usersCopy);
     setCurrentUser(currentUserCopy);
     toast.success("request accepted");
@@ -49,22 +53,26 @@ export default function FriendReq() {
 
               return (
                 <div key={idx} className="req-wrapper">
-                  <Image className="post__avatar" fluid src={user.avatar} />
-                  <h6 className="req__heading">
-                    {user.username} <small>wants to be your friend</small>
-                  </h6>
-                  <Button
-                    onClick={() => rejecetFriend(idx)}
-                    className="req__cross"
-                  >
-                    ❌
-                  </Button>
-                  <Button
-                    onClick={() => accpetFriend(idx)}
-                    className="req__tick"
-                  >
-                    ✔️
-                  </Button>
+                  <div className="flex-row">
+                    <Image className="post__avatar" fluid src={user.avatar} />
+                    <h6 className="req__heading">
+                      {user.username} <small>wants to be your friend</small>
+                    </h6>
+                  </div>
+                  <div className="flex-row">
+                    <Button
+                      onClick={() => rejecetFriend(idx)}
+                      className="req__cross"
+                    >
+                      ❌
+                    </Button>
+                    <Button
+                      onClick={() => accpetFriend(req, idx)}
+                      className="req__tick"
+                    >
+                      ✔️
+                    </Button>
+                  </div>
                 </div>
               );
             }

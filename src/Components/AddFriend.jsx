@@ -4,7 +4,7 @@ import { ToastContainer, toast, Zoom } from "react-toastify";
 import useUser from "../hooks/useUser";
 import searchIcon from "../Images/Icons/search.svg";
 import addPersonIcon from "../Images/Icons/addPerson.svg";
-import { currentUserId } from "../utils/commonFunctions";
+import { currentUserId, getUser } from "../utils/commonFunctions";
 import AddContact from "./AddContact";
 export default function AddFriend() {
   const [users, setUsers, currentUser, setCurrentUser] = useUser();
@@ -13,20 +13,20 @@ export default function AddFriend() {
   function search(value) {
     if (value === "") return setFoundUsers([]);
     const filterd = users.filter((user) =>
-      user.username.toLowerCase().includes(value)
+      user.username.toLowerCase().includes(value.toLowerCase())
     );
 
     setFoundUsers(filterd);
   }
   function sendRequest(id) {
-    const index = currentUserId();
+    const friends = getUser(id, users);
     const usersCopy = [...users];
-    let currentUserCopy = { ...currentUser };
-    currentUserCopy.friends = [...currentUserCopy.friends];
-    currentUserCopy.friends.push({ userId: id, situation: "accepted" });
-    usersCopy[index] = currentUserCopy;
+    let friendCopy = { ...friends };
+    friendCopy.friends = [...friendCopy.friends];
+    friendCopy.friends.push({ userId: currentUser.id, situation: "pending" });
+    usersCopy[id] = friendCopy;
     setUsers(usersCopy);
-    setCurrentUser(currentUserCopy);
+    console.log(usersCopy);
     toast.success("request sent");
   }
   return (

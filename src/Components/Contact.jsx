@@ -3,6 +3,7 @@ import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import useUser from "../hooks/useUser";
 import FriendReq from "./FriendReq";
+import Friends from "./Friends";
 
 export default function Contact() {
   const [users, setUsers, currentUser, setCurrentUser] = useUser();
@@ -16,6 +17,8 @@ export default function Contact() {
       >
         Add new friend
       </Button>
+      <hr className="w-50" />
+      <Friends />
     </div>
   );
 }

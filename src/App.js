@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import User from "./Components/User";
+import setting from "./DataBase/setting.json";
 import useresData from "./DataBase/users.json";
 import groupsData from "./DataBase/groups.json";
 import chatsData from "./DataBase/chats.json";
@@ -18,6 +19,13 @@ function App() {
   const [chats, setChats] = useState(chatsData);
   const [posts, setPosts] = useState(postsData);
 
+  useEffect(() => {
+    const borderMode = setting.borderMode;
+    if (borderMode) {
+      const app = document.getElementById("app");
+      app.classList.add("app--border-mode");
+    }
+  }, []);
   return (
     <div id="app">
       <groupsContext.Provider value={[groups, setGroups]}>
