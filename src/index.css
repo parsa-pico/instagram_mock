@@ -306,7 +306,10 @@ div[role="dialog"] {
 .setting__user-name {
   font-family: "Anton", sans-serif;
 }
-
+.setting__modal__body {
+  text-align: center;
+  font-size: 1.4rem;
+}
 /* profile */
 
 #profile,
