@@ -39,8 +39,12 @@ export default function Login() {
     }));
   }
   return (
-    <div className="login-page login-athlete">
-      <img className="login-athlete__background" src={backGround} />
+    <div id="login-page" className="login-page login-athlete">
+      <img
+        id="login-page__background"
+        className="login-athlete__background"
+        src={backGround}
+      />
       <form
         className="login-form login-form--withbg  relative"
         onSubmit={handleSubmit}

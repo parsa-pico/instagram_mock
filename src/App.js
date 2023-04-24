@@ -24,6 +24,12 @@ function App() {
     if (borderMode) {
       const app = document.getElementById("app");
       app.classList.add("app--border-mode");
+
+      const loginPage = document.getElementById("login-page");
+      loginPage.classList.add("login-athlete--border-mode");
+
+      const loginPageBg = document.getElementById("login-page__background");
+      loginPageBg.classList.add("login-athlete__background--border-mode");
     }
   }, []);
   return (

@@ -16,7 +16,7 @@
 }
 .app--border-mode {
   width: 360px !important;
-  height: 95vh !important;
+  height: 85vh !important;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -116,7 +116,7 @@ code {
   div[role="dialog"],
   .my-backdrop {
     width: 360px;
-    height: 95vh;
+    height: 85vh;
     position: absolute;
     top: 50% !important;
     left: 50% !important;
@@ -137,6 +137,9 @@ code {
   position: relative;
   height: 100vh;
 }
+.login-athlete--border-mode {
+  height: 100%;
+}
 .login-athlete__background {
   position: absolute;
   z-index: -1;
@@ -147,6 +150,11 @@ code {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
+}
+.login-athlete__background--border-mode {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
 }
 .login-page {
   z-index: 0;
